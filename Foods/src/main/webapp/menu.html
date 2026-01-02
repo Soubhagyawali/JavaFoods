@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaFoods - Explore our delicious menu of Indian and international cuisines">
+    <title>Menu</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="menuStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="home.html" class="logo">
+                <span class="logo-icon">🍽️</span>
+                <span class="logo-text">JavaFoods</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link active">Menu</a>
+                <a href="home.html#restaurants" class="nav-link">Restaurants</a>
+                <a href="home.html#offers" class="nav-link">Offers</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="#" class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <a href="login.html" class="btn btn-nav">Sign In</a>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="home.html" class="mobile-link">Home</a>
+            <a href="menu.html" class="mobile-link">Menu</a>
+            <a href="home.html#restaurants" class="mobile-link">Restaurants</a>
+            <a href="home.html#offers" class="mobile-link">Offers</a>
+            <a href="login.html" class="mobile-link">Sign In</a>
+        </div>
+    </nav>
+
+    <!-- Menu Hero Section -->
+    <header class="menu-hero">
+        <div class="menu-hero-bg">
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-glow hero-glow-2"></div>
+            <div class="floating-food food-1">🍛</div>
+            <div class="floating-food food-2">🍕</div>
+            <div class="floating-food food-3">🌮</div>
+            <div class="floating-food food-4">🍜</div>
+        </div>
+        <div class="container">
+            <div class="menu-hero-content">
+                <span class="menu-badge animate-fade-in-up">
+                    <i class="fas fa-utensils"></i> Our Menu
+                </span>
+                <h1 class="menu-title animate-fade-in-up" style="animation-delay: 0.1s;">
+                    Discover <span class="text-gradient-animated">Delicious</span> Dishes
+                </h1>
+                <p class="menu-subtitle animate-fade-in-up" style="animation-delay: 0.2s;">
+                    From authentic Indian flavors to international favorites, explore our carefully curated selection of
+                    dishes.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Filter -->
+    <section class="category-filter">
+        <div class="container">
+            <div class="filter-wrapper">
+                <button class="filter-btn active" data-filter="all">
+                    <span class="filter-icon">🍽️</span>
+                    All Dishes
+                </button>
+                <button class="filter-btn" data-filter="indian">
+                    <span class="filter-icon">🍛</span>
+                    Indian
+                </button>
+                <button class="filter-btn" data-filter="pizza">
+                    <span class="filter-icon">🍕</span>
+                    Pizza
+                </button>
+                <button class="filter-btn" data-filter="burger">
+                    <span class="filter-icon">🍔</span>
+                    Burgers
+                </button>
+                <button class="filter-btn" data-filter="asian">
+                    <span class="filter-icon">🍜</span>
+                    Asian
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Grid Section -->
+    <section class="menu-section">
+        <div class="container">
+            <div class="menu-grid" id="menuGrid">
+
+                <!-- Menu Item 1 - Butter Chicken -->
+                <div class="menu-card" data-category="indian">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=500&q=80"
+                            alt="Butter Chicken">
+                        <div class="menu-card-overlay">
+                            <span class="menu-tag bestseller">
+                                <i class="fas fa-fire"></i> Bestseller
+                            </span>
+                        </div>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-name">Butter Chicken</h3>
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <p class="menu-item-description">Tender chicken cooked in rich, creamy tomato-based curry with
+                            aromatic spices and butter.</p>
+                        <div class="menu-card-footer">
+                            <div class="menu-price">
+                                <span class="price-current">$16.99</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-id="1" data-name="Butter Chicken" data-price="16.99">
+                                <i class="fas fa-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2 - Margherita Pizza -->
+                <div class="menu-card" data-category="pizza">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80"
+                            alt="Margherita Pizza">
+                        <div class="menu-card-overlay">
+                            <span class="menu-tag veg">
+                                <i class="fas fa-leaf"></i> Veg
+                            </span>
+                        </div>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-name">Margherita Pizza</h3>
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        <p class="menu-item-description">Classic Italian pizza with fresh mozzarella, tomatoes, and
+                            basil on a crispy thin crust.</p>
+                        <div class="menu-card-footer">
+                            <div class="menu-price">
+                                <span class="price-current">$14.99</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-id="2" data-name="Margherita Pizza" data-price="14.99">
+                                <i class="fas fa-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3 - Biryani -->
+                <div class="menu-card" data-category="indian">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=500&q=80"
+                            alt="Hyderabadi Biryani">
+                        <div class="menu-card-overlay">
+                            <span class="menu-tag bestseller">
+                                <i class="fas fa-fire"></i> Bestseller
+                            </span>
+                        </div>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-name">Hyderabadi Biryani</h3>
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        <p class="menu-item-description">Fragrant basmati rice layered with tender spiced lamb, saffron,
+                            and caramelized onions.</p>
+                        <div class="menu-card-footer">
+                            <div class="menu-price">
+                                <span class="price-current">$18.99</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-id="3" data-name="Hyderabadi Biryani"
+                                data-price="18.99">
+                                <i class="fas fa-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 4 - Classic Cheeseburger -->
+                <div class="menu-card" data-category="burger">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80"
+                            alt="Classic Cheeseburger">
+                        <div class="menu-card-overlay">
+                            <span class="menu-tag discount">
+                                <i class="fas fa-percent"></i> 20% OFF
+                            </span>
+                        </div>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-name">Classic Cheeseburger</h3>
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                        <p class="menu-item-description">Juicy beef patty with melted cheddar, fresh lettuce, tomato,
+                            and special house sauce.</p>
+                        <div class="menu-card-footer">
+                            <div class="menu-price">
+                                <span class="price-original">$15.99</span>
+                                <span class="price-current">$12.99</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-id="4" data-name="Classic Cheeseburger"
+                                data-price="12.99">
+                                <i class="fas fa-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 5 - Pad Thai -->
+                <div class="menu-card" data-category="asian">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=500&q=80"
+                            alt="Pad Thai">
+                        <div class="menu-card-overlay">
+                            <span class="menu-tag spicy">
+                                <i class="fas fa-pepper-hot"></i> Spicy
+                            </span>
+                        </div>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-name">Pad Thai Noodles</h3>
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                        <p class="menu-item-description">Stir-fried rice noodles with shrimp, peanuts, bean sprouts, and
+                            tangy tamarind sauce.</p>
+                        <div class="menu-card-footer">
+                            <div class="menu-price">
+                                <span class="price-current">$13.99</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-id="5" data-name="Pad Thai Noodles" data-price="13.99">
+                                <i class="fas fa-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 6 - Paneer Tikka Masala -->
+                <div class="menu-card" data-category="indian">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=500&q=80"
+                            alt="Paneer Tikka Masala">
+                        <div class="menu-card-overlay">
+                            <span class="menu-tag veg">
+                                <i class="fas fa-leaf"></i> Veg
+                            </span>
+                        </div>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-name">Paneer Tikka Masala</h3>
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        <p class="menu-item-description">Grilled cottage cheese cubes in spiced tomato gravy with bell
+                            peppers and onions.</p>
+                        <div class="menu-card-footer">
+                            <div class="menu-price">
+                                <span class="price-current">$14.99</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-id="6" data-name="Paneer Tikka Masala"
+                                data-price="14.99">
+                                <i class="fas fa-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 7 - Pepperoni Pizza -->
+                <div class="menu-card" data-category="pizza">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=500&q=80"
+                            alt="Pepperoni Pizza">
+                        <div class="menu-card-overlay">
+                            <span class="menu-tag bestseller">
+                                <i class="fas fa-fire"></i> Bestseller
+                            </span>
+                        </div>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-name">Pepperoni Pizza</h3>
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <p class="menu-item-description">Loaded with spicy pepperoni slices, melted mozzarella, and
+                            zesty marinara sauce.</p>
+                        <div class="menu-card-footer">
+                            <div class="menu-price">
+                                <span class="price-current">$16.99</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-id="7" data-name="Pepperoni Pizza" data-price="16.99">
+                                <i class="fas fa-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 8 - Ramen -->
+                <div class="menu-card" data-category="asian">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=500&q=80"
+                            alt="Tonkotsu Ramen">
+                        <div class="menu-card-overlay">
+                            <span class="menu-tag new">
+                                <i class="fas fa-sparkles"></i> New
+                            </span>
+                        </div>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-name">Tonkotsu Ramen</h3>
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        <p class="menu-item-description">Rich pork bone broth with chashu, soft-boiled egg, nori, and
+                            handmade noodles.</p>
+                        <div class="menu-card-footer">
+                            <div class="menu-price">
+                                <span class="price-current">$15.99</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-id="8" data-name="Tonkotsu Ramen" data-price="15.99">
+                                <i class="fas fa-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 9 - Samosa -->
+                <div class="menu-card" data-category="indian">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=500&q=80"
+                            alt="Samosa Platter">
+                        <div class="menu-card-overlay">
+                            <span class="menu-tag veg">
+                                <i class="fas fa-leaf"></i> Veg
+                            </span>
+                        </div>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-name">Samosa Platter</h3>
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                        <p class="menu-item-description">Crispy golden pastries filled with spiced potatoes and peas,
+                            served with chutneys.</p>
+                        <div class="menu-card-footer">
+                            <div class="menu-price">
+                                <span class="price-current">$8.99</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-id="9" data-name="Samosa Platter" data-price="8.99">
+                                <i class="fas fa-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 10 - BBQ Bacon Burger -->
+                <div class="menu-card" data-category="burger">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=500&q=80"
+                            alt="BBQ Bacon Burger">
+                        <div class="menu-card-overlay">
+                            <span class="menu-tag spicy">
+                                <i class="fas fa-pepper-hot"></i> Spicy
+                            </span>
+                        </div>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3 class="menu-item-name">BBQ Bacon Burger</h3>
+                            <div class="menu-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <p class="menu-item-description">Double beef patties with crispy bacon, jalapeños, and smoky BBQ
+                            sauce.</p>
+                        <div class="menu-card-footer">
+                            <div class="menu-price">
+                                <span class="price-current">$17.99</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-id="10" data-name="BBQ Bacon Burger"
+                                data-price="17.99">
+                                <i class="fas fa-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Notification Toast -->
+    <div class="cart-toast" id="cartToast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span>Item added to cart!</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="home.html" class="logo footer-logo">
+                        <span class="logo-icon">🍽️</span>
+                        <span class="logo-text">JavaFoods</span>
+                    </a>
+                    <p>Best food delivery service providing high quality food from the best restaurants in town.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="home.html">Home</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="#">Restaurants</a></li>
+                            <li><a href="#">Offers</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>Contact</h3>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> 123 Food Street, Tasty City</li>
+                            <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                            <li><i class="fas fa-envelope"></i> info@javafoods.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 JavaFoods. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cart functionality
+        let cartItems = [];
+
+        function updateCartCount() {
+            const cartCount = document.getElementById('cartCount');
+            cartCount.textContent = cartItems.length;
+            cartCount.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                cartCount.style.transform = 'scale(1)';
+            }, 200);
+        }
+
+        function showToast() {
+            const toast = document.getElementById('cartToast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+
+        // Add to cart buttons
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const id = this.dataset.id;
+                const name = this.dataset.name;
+                const price = this.dataset.price;
+
+                cartItems.push({ id, name, price });
+                updateCartCount();
+                showToast();
+
+                // Button animation
+                this.classList.add('added');
+                this.innerHTML = '<i class="fas fa-check"></i> Added';
+                setTimeout(() => {
+                    this.classList.remove('added');
+                    this.innerHTML = '<i class="fas fa-plus"></i> Add to Cart';
+                }, 1500);
+            });
+        });
+
+        // Wishlist buttons
+        document.querySelectorAll('.wishlist-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                this.classList.toggle('active');
+                const icon = this.querySelector('i');
+                if (this.classList.contains('active')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                }
+            });
+        });
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const menuCards = document.querySelectorAll('.menu-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+
+                menuCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                        card.classList.add('animate-in');
+                    } else {
+                        card.style.display = 'none';
+                        card.classList.remove('animate-in');
+                    }
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuToggle.addEventListener('click', function () {
+            mobileMenu.classList.toggle('active');
+            menuToggle.querySelector('i').classList.toggle('fa-bars');
+            menuToggle.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Animate cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.menu-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>

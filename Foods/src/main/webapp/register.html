@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User Registration</title>
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="URegisterStyle.css">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+
+<!-- Animated Background -->
+    <div class="auth-background">
+        <div class="floating-shapes">
+            <div class="shape shape-1">🍕</div>
+            <div class="shape shape-2">🍔</div>
+            <div class="shape shape-3">🌮</div>
+            <div class="shape shape-4">🍜</div>
+            <div class="shape shape-5">🍣</div>
+            <div class="shape shape-6">🥗</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="auth-container">
+        <!-- Left Side - Branding -->
+        <div class="auth-branding">
+            <div class="branding-content">
+                <div class="logo">
+                    <span class="logo-icon">🍽️</span>
+                    <span class="logo-text">JavaFoods</span>
+                </div>
+                <h1 class="branding-title">
+                    Join Our <br>
+                    <span class="text-gradient">Foodie Family</span>
+                </h1>
+                <p class="branding-subtitle">
+                    Create an account to explore thousands of restaurants and get exclusive deals delivered to your
+                    inbox.
+                </p>
+                <div class="branding-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <div class="feature-text">Fast Delivery</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💎</div>
+                        <div class="feature-text">Premium Quality</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎁</div>
+                        <div class="feature-text">Daily Offers</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <div class="food-circle">
+                    <div class="food-item food-1">🍩</div>
+                    <div class="food-item food-2">🍦</div>
+                    <div class="food-item food-3">🥪</div>
+                    <div class="food-item food-4">🍗</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Registration Form -->
+        <div class="auth-form-wrapper">
+            <div class="auth-card glass">
+                <div class="auth-header">
+                    <h2>Create Account ✨</h2>
+                    <p class="subtitle">Register to get started with JavaFoods</p>
+                </div>
+
+                <form action="/Foods/UserRegisterServlet" method="post" class="auth-form" id="registerForm">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            Full Name
+                        </label>
+                        <div class="input-wrapper">
+                            <input type="text" name="name" class="form-input" placeholder="Enter your full name"
+                                required>
+                            <span class="input-focus-border"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            Email Address
+                        </label>
+                        <div class="input-wrapper">
+                            <input type="email" name="email" class="form-input" placeholder="Enter your email" required>
+                            <span class="input-focus-border"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            Address
+                        </label>
+                        <div class="input-wrapper">
+                            <input type="text" name="address" class="form-input"
+                                placeholder="Enter your delivery address" required>
+                            <span class="input-focus-border"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                            </svg>
+                            Password
+                        </label>
+                        <div class="input-wrapper password-wrapper">
+                            <input type="password" name="password" class="form-input"
+                                placeholder="Create a strong password" required id="password">
+                            <button type="button" class="password-toggle" onclick="togglePassword()">
+                                <svg class="eye-open" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                <svg class="eye-closed" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" style="display:none;">
+                                    <path
+                                        d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+                                    <line x1="1" y1="1" x2="23" y2="23" />
+                                </svg>
+                            </button>
+                            <span class="input-focus-border"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-wrapper terms-check">
+                        <input type="checkbox" id="terms">
+                        <label for="terms" class="flex items-center gap-2">
+                            <span class="checkmark"></span>
+                            <span>I agree to the <a href="#" class="link-primary">Terms & Conditions</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg submit-btn">
+                        <span>Register Account</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </button>
+                </form>
+
+                <p class="auth-footer">
+                    Already have an account?
+                    <a href="login.html" class="link-primary">Login here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Password toggle
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeOpen = document.querySelector('.eye-open');
+            const eyeClosed = document.querySelector('.eye-closed');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeOpen.style.display = 'none';
+                eyeClosed.style.display = 'block';
+            } else {
+                passwordInput.type = 'password';
+                eyeOpen.style.display = 'block';
+                eyeClosed.style.display = 'none';
+            }
+        }
+
+        // Add input focus animations
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', function () {
+                this.parentElement.classList.add('focused');
+            });
+            input.addEventListener('blur', function () {
+                if (!this.value) {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
