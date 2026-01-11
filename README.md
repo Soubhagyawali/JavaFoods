@@ -68,18 +68,25 @@ The project focuses on backend logic, clean architecture, and real-time data flo
 
 ## 🗂️ Project Structure
 
-FoodOrderingApp
+```text
+Foods
 │
-├── src/
-│ ├── Servlets/
-│ ├── dao/
-│ ├── daoImplementation/
-│ ├── model/
-│ ├── utility/
+├── src/main/java
+│   ├── Servlets/
+│   ├── dao/
+│   ├── daoImplementation/
+│   ├── model/
+│   ├── utility/
 │
-├── WebContent/
-│ ├── jsp/
-│ ├── css/
+├── webapp/
+│   ├── assets/
+│   │   └── images/menu/
+│   │   └── screenshots/
+│   ├── jsp/
+│   ├── css/
+│
+├── README.md
+
 
 
 ---
@@ -94,10 +101,9 @@ FoodOrderingApp
 
 ---
 
-## 🎥 Demo Video
+## 🔗 LinkedIn Project Post
 
-📹 *Demo video available on LinkedIn*
-![Link](https://www.linkedin.com/posts/soubhagya-wali-84867a327_javafullstack-javadeveloper-webdevelopment-activity-7412809185899479040-QI_V?utm_source=share&utm_medium=member_android&rcm=ACoAAFKAtzgBSJrfA8cmmavziqqHoajLOY8o3pU)
+👉 [View Project Showcase on LinkedIn](https://www.linkedin.com/posts/soubhagya-wali-84867a327_javafullstack-javadeveloper-webdevelopment-activity-7412809185899479040-QI_V)
 
 ---
 
