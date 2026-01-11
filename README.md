@@ -97,6 +97,7 @@ FoodOrderingApp
 ## 🎥 Demo Video
 
 📹 *Demo video available on LinkedIn*
+![Link](https://www.linkedin.com/posts/soubhagya-wali-84867a327_javafullstack-javadeveloper-webdevelopment-activity-7412809185899479040-QI_V?utm_source=share&utm_medium=member_android&rcm=ACoAAFKAtzgBSJrfA8cmmavziqqHoajLOY8o3pU)
 
 ---
 
