@@ -66,7 +66,7 @@
         <div class="container hero-container">
             <div class="hero-content">
                 <span class="hero-badge animate-fade-in-up">
-                    <i class="fas fa-fire"></i> #1 Food Delivery App
+                    <i class="fas fa-fire"></i> #1 Food Delivery Website
                 </span>
                 <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.1s;">
                     Order Food<br>
@@ -80,7 +80,7 @@
                 <div class="hero-search animate-fade-in-up" style="animation-delay: 0.3s;">
                     <div class="search-location">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>New York</span>
+                        <span>Bangalore</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="search-divider"></div>
@@ -97,13 +97,13 @@
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat-item">
-                        <span class="stat-number">500+</span>
+                        <span class="stat-number">50+</span>
                         <span class="stat-label">Restaurants</span>
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat-item">
                         <span class="stat-number">4.9</span>
-                        <span class="stat-label">App Rating</span>
+                        <span class="stat-label">Rating</span>
                     </div>
                 </div>
             </div>
@@ -152,7 +152,7 @@
                     <h2 class="section-title-large">Get Your Food In Less<br>Than An Hour</h2>
                     <p class="how-description">
                         Craving delicious meals without the hassle of cooking or leaving your home?
-                        Look no further than JavaFoods, your go-to food delivery app.
+                        Look no further than JavaFoods, your go-to food delivery website.
                     </p>
                     <a href="#menu" class="btn btn-outline">
                         <span>Explore Menu</span>
@@ -166,7 +166,7 @@
                     <div class="step-content">
                         <h3>Search Your Favorite Food</h3>
                         <p>Order your food online to get the fastest delivery.</p>
-                        <a href="#" class="step-link">Download Now <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="step-link">Browse Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
      
@@ -216,9 +216,9 @@
                     </div>
                     <div class="deal-content">
                         <span class="deal-badge">Best Buy</span>
-                        <h3 class="deal-title">8 Burgers+<br>French Fries</h3>
+                        <h3 class="deal-title">5 Burgers+<br>French Fries</h3>
                         <p class="deal-description">100% fresh beef patty, cheddar cheese, onion, pickles and more!</p>
-                        <a href="#" class="btn btn-primary">Explore Menu</a>
+                        <a href="menu.jsp" class="btn btn-primary">Explore Menu</a>
                     </div>
                 </div>
 
@@ -487,8 +487,8 @@
                     <div class="footer-col">
                         <h3>Contact</h3>
                         <ul class="contact-info">
-                            <li><i class="fas fa-map-marker-alt"></i> 123 Food Street, Tasty City</li>
-                            <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                            <li><i class="fas fa-map-marker-alt"></i> 123 Food Street, Bangalore</li>
+                            <li><i class="fas fa-phone"></i>+91 123456789</li>
                             <li><i class="fas fa-envelope"></i> info@javafoods.com</li>
                         </ul>
                     </div>
