@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@ page import="com.food.model.Cart,com.food.model.CartItem" %>    
+    
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,9 +27,9 @@
                 <span class="logo-icon">🍽️</span>
                 <span class="logo-text">JavaFoods</span>
             </a>
-            <div class="nav-links">
-                <a href="home.html" class="nav-link">Home</a>
-                <a href="menu.html" class="nav-link">Menu</a>
+             <div class="nav-links">
+                <a href="Restaurant.jsp" class="nav-link">Home</a>
+                <a href="menu.jsp" class="nav-link">Menu</a>
                 <a href="home.html#restaurants" class="nav-link">Restaurants</a>
                 <a href="home.html#offers" class="nav-link">Offers</a>
             </div>
@@ -39,10 +43,10 @@
             </div>
         </div>
         <div class="mobile-menu" id="mobileMenu">
-            <a href="home.html" class="mobile-link">Home</a>
-            <a href="menu.html" class="mobile-link">Menu</a>
-            <a href="home.html#restaurants" class="mobile-link">Restaurants</a>
-            <a href="home.html#offers" class="mobile-link">Offers</a>
+            <a href="Restaurant.jsp" class="mobile-link">Home</a>
+            <a href="menu.jsp" class="mobile-link">Menu</a>
+            <a href="Restaurant.jsp#restaurants" class="mobile-link">Restaurants</a>
+            <a href="Restaurant.jsp#offers" class="mobile-link">Offers</a>
             <a href="login.html" class="mobile-link">Sign In</a>
         </div>
     </nav>
@@ -162,62 +166,11 @@
                     </div>
                 </div>
 
-                <!-- Submit Button -->
-                <button type="submit" class="place-order-btn">
-                    Place Order
-                </button>
+              
             </div>
         </div>
     </div>
 
-
-
-                    <!-- Delivery Time -->
-                    <div class="checkout-card">
-                        <div class="card-header">
-                            <div class="header-icon"><i class="fas fa-clock"></i></div>
-                            <div class="header-text">
-                                <h2>Delivery Time</h2>
-                                <p>When would you like your order?</p>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="delivery-time-options">
-                                <label class="time-option"><input type="radio" name="deliveryTime" value="asap" checked>
-                                    <div class="time-card">
-                                        <div class="time-icon"><i class="fas fa-bolt"></i></div>
-                                        <div class="time-details"><span class="time-title">ASAP</span><span
-                                                class="time-estimate">30-45 minutes</span></div>
-                                        <div class="time-badge popular">Most Popular</div>
-                                    </div>
-                                </label>
-                                <label class="time-option"><input type="radio" name="deliveryTime" value="scheduled">
-                                    <div class="time-card">
-                                        <div class="time-icon"><i class="fas fa-calendar-alt"></i></div>
-                                        <div class="time-details"><span class="time-title">Schedule</span><span
-                                                class="time-estimate">Choose a time</span></div>
-                                    </div>
-                                </label>
-                            </div>
-                            <div class="schedule-picker" id="schedulePicker" style="display: none;">
-                                <div class="form-row">
-                                    <div class="form-group"><label class="form-label">Date</label>
-                                        <div class="input-wrapper"><i class="fas fa-calendar"></i><input type="date"
-                                                class="form-input"></div>
-                                    </div>
-                                    <div class="form-group"><label class="form-label">Time</label>
-                                        <div class="input-wrapper"><i class="fas fa-clock"></i><select
-                                                class="form-input form-select">
-                                                <option>12:00 PM - 12:30 PM</option>
-                                                <option>12:30 PM - 1:00 PM</option>
-                                                <option>6:00 PM - 6:30 PM</option>
-                                                <option>7:00 PM - 7:30 PM</option>
-                                            </select></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Payment Method -->
                     <div class="checkout-card">
@@ -283,42 +236,57 @@
                         </div>
                     </div>
                 </div>
-			</form>
+			
+			
                 <!-- Order Summary -->
                 <div class="order-summary">
                     <div class="summary-card sticky-card">
                         <h3 class="summary-title"><i class="fas fa-receipt"></i> Order Summary</h3>
                         <div class="order-items">
-                            <div class="order-item">
+
+                            
+						<%
+						Cart cart = (Cart) session.getAttribute("cart");
+						double total = 0;
+						%>
+						   <% if (cart != null && !cart.getItems().isEmpty()) { 
+						   		for (CartItem item : cart.getItems().values()) {
+						   			
+						   			  double itemTotal = item.getPrice() * item.getQuantity();
+								       total += itemTotal;
+						%>
+															
+                                <div class="order-item">								
                                 <div class="item-image"><img
-                                        src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=60&q=80"
-                                        alt="Butter Chicken"></div>
-                                <div class="item-details"><span class="item-name">Butter Chicken</span><span
-                                        class="item-qty">x1</span></div><span class="item-price">$16.99</span>
-                            </div>
-                            <div class="order-item">
-                                <div class="item-image"><img
-                                        src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=60&q=80"
-                                        alt="Pizza"></div>
-                                <div class="item-details"><span class="item-name">Margherita Pizza</span><span
-                                        class="item-qty">x2</span></div><span class="item-price">$29.98</span>
-                            </div>
-                            <div class="order-item">
-                                <div class="item-image"><img
-                                        src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=60&q=80"
-                                        alt="Biryani"></div>
-                                <div class="item-details"><span class="item-name">Hyderabadi Biryani</span><span
-                                        class="item-qty">x1</span></div><span class="item-price">$18.99</span>
-                            </div>
+                                        src="<%= item.getImagePath() %>"
+                                        alt="<%= item.getName() %>"></div>
+                                <div class="item-details">
+                                <span class="item-name"><%= item.getName() %></span>
+                                <span class="item-qty">x<%= item.getQuantity() %></span></div>
+                                <span class="item-price">₹<%= itemTotal %></span>
+                                 </div>
+                                 <%}  %>
+								<% } else { %>
+
+            						<p>Your cart is empty.</p>
+
+								<% } %>          
+                                        
+                           
                         </div>
-                        <a href="cart.html" class="edit-cart-link"><i class="fas fa-edit"></i> Edit Cart</a>
+                        
+ 
+                        <a href="Cart.jsp" class="edit-cart-link"><i class="fas fa-edit"></i> Edit Cart</a>
                         <div class="summary-divider"></div>
                         
                         
-                        <div class="summary-total"><span>Total</span><span class="total-amount">$62.66</span></div>
-                        <button class="place-order-btn" id="placeOrderBtn"><i class="fas fa-lock"></i><span>Place
-                                Order</span><i class="fas fa-arrow-right"></i></button>
-                        <div class="security-badges">
+                        <div class="summary-total"><span>Total</span><span class="total-amount">₹<%= total %></span></div>
+                      	<button type="submit" class="place-order-btn">
+						    <i class="fas fa-lock"></i>
+						    <span>Place Order</span>
+						    <i class="fas fa-arrow-right"></i>
+							</button>
+							<div class="security-badges">
                             <div class="security-badge"><i class="fas fa-shield-alt"></i><span>Secure</span></div>
                             <div class="security-badge"><i class="fas fa-undo"></i><span>Easy Refunds</span></div>
                         </div>
@@ -327,69 +295,18 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <a href="home.html" class="logo footer-logo"><span class="logo-icon">🍽️</span><span
-                            class="logo-text">JavaFoods</span></a>
-                    <p>Best food delivery service providing high quality food from the best restaurants in town.</p>
-                    <div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i
-                                class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a
-                            href="#"><i class="fab fa-linkedin-in"></i></a></div>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-col">
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li><a href="home.html">Home</a></li>
-                            <li><a href="menu.html">Menu</a></li>
-                            <li><a href="#">Restaurants</a></li>
-                            <li><a href="#">Offers</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h3>Support</h3>
-                        <ul>
-                            <li><a href="#">Help Center</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h3>Contact</h3>
-                        <ul class="contact-info">
-                            <li><i class="fas fa-map-marker-alt"></i> 123 Food Street, Tasty City</li>
-                            <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-                            <li><i class="fas fa-envelope"></i> info@javafoods.com</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 JavaFoods. All rights reserved.</p>
-                <div class="payment-methods"><i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i><i
-                        class="fab fa-cc-paypal"></i><i class="fab fa-cc-apple-pay"></i></div>
-            </div>
-        </div>
-    </footer>
+</form>
+   
 
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
         menuToggle.addEventListener('click', function () { mobileMenu.classList.toggle('active'); menuToggle.querySelector('i').classList.toggle('fa-bars'); menuToggle.querySelector('i').classList.toggle('fa-times'); });
 
-        document.querySelectorAll('input[name="deliveryTime"]').forEach(option => { option.addEventListener('change', function () { document.getElementById('schedulePicker').style.display = this.value === 'scheduled' ? 'block' : 'none'; }); });
-
-        document.querySelectorAll('input[name="payment"]').forEach(option => { option.addEventListener('change', function () { document.getElementById('cardDetailsForm').style.display = this.value === 'card' ? 'block' : 'none'; }); });
-
-        document.getElementById('placeOrderBtn').addEventListener('click', function () { this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...'; this.disabled = true; setTimeout(() => { this.innerHTML = '<i class="fas fa-check"></i> Order Placed!'; this.style.background = 'linear-gradient(135deg, var(--accent-green) 0%, var(--accent-green-dark) 100%)'; setTimeout(() => { alert('Order placed successfully! Thank you for ordering with JavaFoods.'); }, 500); }, 2000); });
-    </script>
+      
+        </script>
 </body>
 
 </html>

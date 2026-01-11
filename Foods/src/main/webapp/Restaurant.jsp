@@ -16,11 +16,6 @@
 </head>
 <body>
 
-
-
-
-
- <!-- Navbar -->
     <nav class="navbar">
         <div class="container navbar-container">
             <a href="#" class="logo">
@@ -357,7 +352,7 @@
 			<a href="menu?resId=<%=restaurant.getRestaurantId()%>">
             <div class="restaurant-card">
                 <div class="restaurant-img">
-                    <img src="${restaurant.getImagePath() }>"
+                    <img src="<%= restaurant.getImagePath() %>">
                          alt="${ restaurant.getName() }">
                 </div>
 

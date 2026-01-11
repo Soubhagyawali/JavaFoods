@@ -5,16 +5,19 @@ public class CartItem {
 	private String name;
 	private int quantity;
 	private double price;
+	private String imagePath;
+	
 	
 	public CartItem() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CartItem(int itemId, String name, int quantity, double price) {
+	public CartItem(int itemId, String name, int quantity, double price,String imagePath) {
 		this.itemId = itemId;
 		this.name = name;
 		this.quantity = quantity;
 		this.price = price;
+		this.imagePath=imagePath;
 	}
 
 	public int getItemId() {
@@ -48,6 +51,15 @@ public class CartItem {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+
 
 	@Override
 	public String toString() {

@@ -28,8 +28,8 @@
             </a>
 
             <div class="nav-links">
-                <a href="home.html" class="nav-link">Home</a>
-                <a href="menu.html" class="nav-link active">Menu</a>
+                <a href="Restaurant.jsp" class="nav-link">Home</a>
+                <a href="menu.jsp" class="nav-link">Menu</a>
                 <a href="home.html#restaurants" class="nav-link">Restaurants</a>
                 <a href="home.html#offers" class="nav-link">Offers</a>
             </div>
@@ -122,7 +122,7 @@
                 <!-- Menu Item 1 - Butter Chicken -->
                 <div class="menu-card" data-category="indian">
                     <div class="menu-card-image">
-                        <img src="${menu.getImagePath()}"
+                        <img src="<%= menu.getImagePath() %>"
                             alt="${menu.getItemName() }">
                         <div class="menu-card-overlay">
                             <span class="menu-tag bestseller">

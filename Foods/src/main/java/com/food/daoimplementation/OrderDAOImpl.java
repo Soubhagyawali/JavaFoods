@@ -20,9 +20,7 @@ public class OrderDAOImpl implements OrderDAO {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/tapfood_db", "root","Sou@2bu22cb054");
 	}
-	
-	
-	
+
 	
 	
 	@Override

@@ -124,11 +124,12 @@
 
 			<%
 		for(CartItem item : cart.getItems().values()){
+			
 			%>  
 	              <!-- Cart Item 1 -->
                     <div class="cart-item">
                         <div class="cart-item-image">
-                            <img src="https://cdn.shortpixel.ai/client/q_lossy,ret_img,w_1200/https://norecipes.com/wp-content/uploads/2017/05/chicken-biryani-12-1200x1799.jpg"
+                            <img src="<%= item.getImagePath() %>"
                                 alt=<%= item.getName() %>>
                         </div>
                         <div class="cart-item-details">

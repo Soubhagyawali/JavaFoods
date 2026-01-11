@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 
+import com.food.dao.OrderDAO;
 import com.food.daoimplementation.OrderDAOImpl;
 import com.food.daoimplementation.OrderItemDAOImpl;
 import com.food.model.Cart;
@@ -27,10 +28,15 @@ public class CheckoutServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		 HttpSession session=req.getSession();
 		 Cart cart =(Cart)session.getAttribute("cart");
-		 User user =(User)session.getAttribute("user");
+		 User user =(User)session.getAttribute("loggedInUser");
 		 
-		 int restaurantId =(Integer) session.getAttribute("oldRestaurantId");
-		 
+		 Integer resId = (Integer) session.getAttribute("oldRestaurantId");
+		 if (resId == null) {
+		     resp.sendRedirect("cart.jsp");
+		     return;
+		 }
+		 int restaurantId = resId;
+
 		 String address = req.getParameter("address");
 		 String payment =req.getParameter("payment");
 		 
@@ -62,21 +68,22 @@ public class CheckoutServlet extends HttpServlet {
 				OrderDAOImpl orderDAOImpl = new OrderDAOImpl();
 				
 				int orderId =orderDAOImpl.addOrder(order);
-				
+		
+
 				for(CartItem item : cart.getItems().values()) {
 					int itemId= item.getItemId();
 					int quantity =item.getQuantity();
-					double totalPrice =item.getPrice();
+					double totalPrice =item.getPrice() * quantity;
 					
 					OrderItem orderItem = new OrderItem();
 					
 					orderItem.setOrderId(orderId);
-					orderItem.setMenuId(orderId);
+					orderItem.setMenuId(itemId);
 					orderItem.setQuantity(quantity);
 					orderItem.setItemTotal(totalPrice);
 					
 					OrderItemDAOImpl orderItemDAOImpl = new OrderItemDAOImpl();
-					
+				
 					orderItemDAOImpl.addOrderItem(orderItem);
 				 }
 				
@@ -90,7 +97,7 @@ public class CheckoutServlet extends HttpServlet {
 			 
 			 session.removeAttribute("oldRestaurantId");
 			 
-			 resp.sendRedirect("orderConfirmation.jsp");
+			 resp.sendRedirect("orderConfirmation.html");
 			 
 		 }
 		 else {

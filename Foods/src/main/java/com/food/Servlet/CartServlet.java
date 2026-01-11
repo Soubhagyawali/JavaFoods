@@ -77,8 +77,9 @@ public class CartServlet extends HttpServlet {
 			
 			String itemName = menu.getItemName();
 			double itemPrice =menu.getPrice();
+			 String imageUrl = menu.getImagePath();
 			
-			CartItem cartItem=new CartItem(itemId, itemName, quantity, itemPrice);
+			CartItem cartItem=new CartItem(itemId, itemName, quantity, itemPrice,imageUrl);
 			cart.addItem(cartItem);
 
  }
