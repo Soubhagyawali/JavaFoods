@@ -64,9 +64,6 @@ The project focuses on backend logic, clean architecture, and real-time data flo
 ### 🛒 Cart Page
 ![Cart Page](Foods/src/main/webapp/assets/screenshots/cart.png.png)
 
-> 📌 **Note:**  
-> Create a folder named **`screenshots`** in your GitHub repository root and place your images there.
-
 ---
 
 ## 🗂️ Project Structure
