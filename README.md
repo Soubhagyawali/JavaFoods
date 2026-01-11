@@ -56,13 +56,13 @@ The project focuses on backend logic, clean architecture, and real-time data flo
 ## 📷 Screenshots
 
 ### 🏠 Home Page
-![Home Page](webapp/assets/screenshots/homepage.png)
+![Home Page](Foods/webapp/assets/screenshots/homepage.png)
 
 ### 🍴 Menu Page
-![Menu Page](webapp/assets/screenshots/menu.png)
+![Menu Page](Foods/webapp/assets/screenshots/menu.png)
 
 ### 🛒 Cart Page
-![Cart Page](webapp/assets/screenshots/cart.png)
+![Cart Page](Foods/webapp/assets/screenshots/cart.png)
 
 > 📌 **Note:**  
 > Create a folder named **`screenshots`** in your GitHub repository root and place your images there.
